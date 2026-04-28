@@ -1,0 +1,22 @@
+body{
+    background-color: aliceblue;
+}
+
+
+#menu {
+    background: rgba(14, 63, 168, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+#menu a {
+    color: white;
+}
+
+#accueil {
+    text-align: center;
+    padding: 100px 20px;
+}
