@@ -73,3 +73,9 @@ table {
 pre {
     margin-left: 2%;
 }
+
+img{
+    float: right;
+    width: 300px;
+    height: 225px;
+}
