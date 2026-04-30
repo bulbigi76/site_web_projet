@@ -42,7 +42,6 @@ table {
     margin-bottom: 100px;
     margin-left: 2%;
     margin-right: 2%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
     color: rgb(255, 255, 255);
 }
 
@@ -53,7 +52,6 @@ table {
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 100px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
     color: rgb(255, 255, 255);
 }
 
@@ -64,7 +62,6 @@ table {
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 100px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
     color: rgb(255, 255, 255);
 }
 
