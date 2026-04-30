@@ -57,7 +57,7 @@
       <div id="materiel">
 
         <h2>Le matériel utilisé</h2>
-        <table border="4">
+        <table border="2">
           <tr> 
             <th>Composant</th>
             <th>Quantité</th>
@@ -75,6 +75,99 @@
             <td>1</td>
           </tr>
         </table>
+
+      </div>
+
+      <div id="code">
+        <div id="box">
+          <pre>
+#include <LiquidCrystal_I2C.h>
+
+const int bouton = 1;
+
+LiquidCrystal_I2C ecran(0x27, 20, 4);
+
+unsigned long tempsDepart = 0;
+unsigned long tempsEcoule = 0;
+
+bool chronoEnCours = false;
+bool etatBoutonPrecedent = HIGH;
+bool jeuDemarre = false;
+
+void setup() {
+  ecran.init();
+  ecran.backlight();
+  pinMode(bouton, INPUT_PULLUP);
+  pinMode(8, OUTPUT);
+
+  // Message de départ
+  ecran.setCursor(0, 0);
+  ecran.print("Appuie pour");
+  ecran.setCursor(0, 1);
+  ecran.print("jouer");
+}
+
+void loop() {
+  bool etatBouton = digitalRead(bouton);
+
+  // Détection du clic
+  if (etatBoutonPrecedent == HIGH && etatBouton == LOW) {
+
+    //  PREMIER CLIC --> démarrage du jeu
+    if (!jeuDemarre) {
+      jeuDemarre = true;
+      chronoEnCours = true;
+      tempsDepart = millis();
+      ecran.clear();
+    }
+
+    // SI CHRONO EN COURS --> on stop
+    else if (chronoEnCours) {
+      tempsEcoule = millis() - tempsDepart;
+      chronoEnCours = false;
+
+      ecran.clear();
+      ecran.setCursor(0, 0);
+      ecran.print("Temps: ");
+      ecran.print(tempsEcoule / 1000.0);
+
+      ecran.setCursor(0, 1);
+
+      if (abs(tempsEcoule - 10000) < 300) {
+        ecran.print("VICTOIRE !");
+        tone(8, 1000, 500);
+      } else {
+        ecran.print("PERDU !");
+        tone(8, 200, 500);
+      }
+    }
+
+    //  SI RESULTAT --> reset
+    else {
+      jeuDemarre = false;
+      ecran.clear();
+      ecran.setCursor(0, 0);
+      ecran.print("Appuie pour");
+      ecran.setCursor(0, 1);
+      ecran.print("jouer");
+    }
+
+    delay(200); 
+  }
+
+  etatBoutonPrecedent = etatBouton;
+
+  // Affichage du chrono
+  if (chronoEnCours) {
+    tempsEcoule = millis() - tempsDepart;
+    ecran.setCursor(0, 0);
+    ecran.print("Temps: ");
+    ecran.print(tempsEcoule / 1000.0);
+  }
+}
+          </pre>
+
+        </div>
 
       </div>
 
