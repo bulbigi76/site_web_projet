@@ -89,7 +89,7 @@
         <h2>Le code Arduino</h2>
         <div id="box">
           <pre>
-#include <LiquidCrystal_I2C.h>
+#include &lt;LiquidCrystal_I2C.h&gt;
 
 const int bouton = 1;
 
@@ -102,13 +102,17 @@ bool chronoEnCours = false;
 bool etatBoutonPrecedent = HIGH;
 bool jeuDemarre = false;
 
+// Pour l'alternance d'affichage
+unsigned long dernierChangement = 0;
+bool afficherTemps = false;
+
 void setup() {
   ecran.init();
   ecran.backlight();
   pinMode(bouton, INPUT_PULLUP);
   pinMode(8, OUTPUT);
 
-  // Message de départ
+  // Message initial
   ecran.setCursor(0, 0);
   ecran.print("Appuie pour");
   ecran.setCursor(0, 1);
@@ -118,10 +122,30 @@ void setup() {
 void loop() {
   bool etatBouton = digitalRead(bouton);
 
-  // Détection du clic
+  // alternance visuel 
+  if (!jeuDemarre) {
+    if (millis() - dernierChangement > 3000) {
+      afficherTemps = !afficherTemps;
+      dernierChangement = millis();
+
+      ecran.clear();
+
+      if (afficherTemps) {
+        ecran.setCursor(0, 0);
+        ecran.print("Temps: 0:00");
+      } else {
+        ecran.setCursor(0, 0);
+        ecran.print("Appuie pour");
+        ecran.setCursor(0, 1);
+        ecran.print("jouer");
+      }
+    }
+  }
+
+  // detection appui
   if (etatBoutonPrecedent == HIGH && etatBouton == LOW) {
 
-    //  PREMIER CLIC --> démarrage du jeu
+    // 1e clic = démarrage
     if (!jeuDemarre) {
       jeuDemarre = true;
       chronoEnCours = true;
@@ -129,7 +153,7 @@ void loop() {
       ecran.clear();
     }
 
-    // SI CHRONO EN COURS --> on stop
+    // 2e clic = arrêt
     else if (chronoEnCours) {
       tempsEcoule = millis() - tempsDepart;
       chronoEnCours = false;
@@ -150,30 +174,27 @@ void loop() {
       }
     }
 
-    //  SI RESULTAT --> reset
+    // 3e clic = reset
     else {
       jeuDemarre = false;
       ecran.clear();
-      ecran.setCursor(0, 0);
-      ecran.print("Appuie pour");
-      ecran.setCursor(0, 1);
-      ecran.print("jouer");
     }
 
-    delay(200); 
+    delay(200);
   }
 
   etatBoutonPrecedent = etatBouton;
 
-  // Affichage du chrono
+  // affichage du chrono
   if (chronoEnCours) {
     tempsEcoule = millis() - tempsDepart;
+
     ecran.setCursor(0, 0);
     ecran.print("Temps: ");
     ecran.print(tempsEcoule / 1000.0);
   }
 }
-          </pre>
+</pre>
 
         </div>
 
