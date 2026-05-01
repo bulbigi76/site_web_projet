@@ -6,6 +6,25 @@ body{
     font-family: Calibri, sans-serif;
 }
 
+
+#accueil h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+#slogan {
+    font-size: 1.5rem;
+    color: #38bdf8;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#accueil p {
+    font-size: 1rem;
+    color: #94a3b8;
+}
+
 #menu {
     background: #020617;
     padding: 15px;
