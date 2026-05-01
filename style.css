@@ -35,17 +35,7 @@ table {
     border-color: aliceblue;
 }
 
-#cahier {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 100px;
-    margin-left: 2%;
-    margin-right: 2%;
-    color: rgb(255, 255, 255);
-}
-
-#materiel{
+#impression3d, #code, #materiel, #cahier {
     background: #1e293b;
     margin-left: 2%;
     margin-right: 2%;
@@ -55,34 +45,23 @@ table {
     color: rgb(255, 255, 255);
 }
 
-#code {
+#conclusion{
     background: #1e293b;
     margin-left: 2%;
     margin-right: 2%;
     padding: 30px;
     border-radius: 15px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     color: rgb(255, 255, 255);
 }
 
-#impression3d {
-    background: #1e293b;
-    margin-left: 2%;
+#apropos{
+    margin-left: 1%;
     margin-right: 2%;
     padding: 30px;
     border-radius: 15px;
-    margin-bottom: 100px;
     color: rgb(255, 255, 255);
-}
 
-#conclusion {
-    background: #1e293b;
-    margin-left: 2%;
-    margin-right: 2%;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 100px;
-    color: rgb(255, 255, 255);
 }
 
 #box{
