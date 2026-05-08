@@ -172,7 +172,7 @@ void loop() {
 
       ecran.setCursor(0, 1);
 
-      if (abs(tempsEcoule - 10000) < 300) {
+      if ((tempsEcoule / 10) == 1000) {
         ecran.print("VICTOIRE !");
         tone(8, 1000, 500);
       } else {
