@@ -219,7 +219,28 @@ void loop() {
         Tout d’abord, il m’a permis de continuer à me former à l’utilisation d’Arduino, après quelques petits exercices personnels. De plus, j’ai pu mettre en œuvre de manière autonome mes connaissances acquises en HTML et en CSS.
           <br>
           <br>
-        J’ai également appris à mieux maîtriser les outils Git et GitHub.
+        J’ai également appris<script>
+    const timer = document.getElementById("timer");
+
+    let time = 0;
+
+    function updateTimer(){
+
+      let seconds = String(time).padStart(2, '0');
+
+      timer.textContent = `00:${seconds}`;
+
+      time++;
+
+      if(time > 10){
+        time = 0;
+      }
+    }
+
+    updateTimer();
+
+    setInterval(updateTimer, 1000);
+  </script> à mieux maîtriser les outils Git et GitHub.
         Enfin, concernant la partie impression 3D, j’ai découvert, avec l’aide de proches, un domaine que je ne connaissais jusque-là que de loin, et qui s’est révélé passionnant. J’ai ainsi pu apprendre de nombreuses choses, notamment la modélisation. </p>
 
         <h3>Axe d'amélioration du projet</h3>
@@ -229,10 +250,11 @@ void loop() {
         </p>
       </div>
 
-      <div id="apropos"">
+      <div id="apropos">
         Site et projet réalisés par Louis Leblond, étudiant en L1 Informatique à l’Université du Havre.
 
       </div>
+   
 
 
   </body>
