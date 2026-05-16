@@ -40,7 +40,7 @@ body {
     margin-bottom: 60px; 
     background: linear-gradient(rgba(0, 0, 0, 0.687), rgba(0, 0, 0, 0.744)),
                 url('images/IMG_2172.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     color: #f4f5f6;
     box-shadow: inset 0 -10px 20px rgba(0,0,0,0.2);
