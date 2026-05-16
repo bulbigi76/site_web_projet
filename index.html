@@ -211,6 +211,52 @@ void loop() {
       <div id="impression3d">
         <h2>Impression 3D</h2>
 
+        <p>
+        Afin de compléter ce projet et de le rendre plus esthétique et plus pratique à utiliser, j'ai réaliser une coque faites en impression 3D
+        </p>
+
+        <h3>Conception du boîtier</h3>
+
+        <p>
+        Le boîtier a été modélisé à l’aide du logiciel Fusion360. 
+         Plusieurs contraintes devaient être prises en compte :
+        </p>
+
+        <ul>
+        <li>laisser un emplacement adapté à l’écran LCD ;</li>
+        <li>prévoir une ouverture pour le bouton poussoir ;</li>
+        <li>permettre le passage des câbles ;</li>
+        <li>avoir une taille suffisante pour accueillir la carte Arduino.</li>
+        </ul>
+
+        <p>Voici quelques captures d'écran de la modélisation 3D sur logiciel : </p>
+
+        <div id="images">
+        <p><img src="images/louis_borne_ce/avant.png"></p>
+        <p><img src="images/louis_borne_ce/arrière.png"></p>
+        <p><img src="images/louis_borne_ce/dos.png"></p>
+        </div>
+        <p>
+         Chaque pièce s'emboitent et ont toutes étaient collé à la colle forte pour être sur de maintien.
+        </p>
+        <p>Les cylindres visibles permettent de visser les éléments à la structure pour que les élements pour être sur que rien ne bougent.
+         <br> Le Bloc du bas acceuil la carte Arduino. </p>
+
+        <h3>Impression du modèle</h3>
+
+      <p>
+      Une fois la modélisation terminée, le fichier 3D a été exporté puis préparé pour l’impression.
+      L’impression a été réalisée en plastique PLA.
+      </p>
+
+     <h3>Résultat final</h3>
+
+      <p>
+      Grâce à l’impression 3D, le projet possède désormais une structure plus propre et plus solide.
+      Le boîtier permet de mieux présenter le jeu et facilite également son transport et son utilisation.
+      Cette partie du projet m’a permis de découvrir les bases de la modélisation et de mieux comprendre le fonctionnement de l’impression 3D.
+      </p>
+
       </div>
 
       <div id="conclusion">
@@ -220,28 +266,7 @@ void loop() {
         Tout d’abord, il m’a permis de continuer à me former à l’utilisation d’Arduino, après quelques petits exercices personnels. De plus, j’ai pu mettre en œuvre de manière autonome mes connaissances acquises en HTML et en CSS.
           <br>
           <br>
-        J’ai également appris<script>
-    const timer = document.getElementById("timer");
-
-    let time = 0;
-
-    function updateTimer(){
-
-      let seconds = String(time).padStart(2, '0');
-
-      timer.textContent = `00:${seconds}`;
-
-      time++;
-
-      if(time > 10){
-        time = 0;
-      }
-    }
-
-    updateTimer();
-
-    setInterval(updateTimer, 1000);
-  </script> à mieux maîtriser les outils Git et GitHub.
+        J’ai également appris à mieux maîtriser les outils Git et GitHub.
         Enfin, concernant la partie impression 3D, j’ai découvert, avec l’aide de proches, un domaine que je ne connaissais jusque-là que de loin, et qui s’est révélé passionnant. J’ai ainsi pu apprendre de nombreuses choses, notamment la modélisation. </p>
 
         <h3>Axe d'amélioration du projet</h3>
