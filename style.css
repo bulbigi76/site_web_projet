@@ -89,7 +89,7 @@ body {
     border-left: 5px solid #e66a25; 
 }
 
-#images{
+.images{
 
     display: flex;
     justify-content: center; 
@@ -97,7 +97,7 @@ body {
 
 }
 
-#images img{
+.images img{
     width: auto;
     height: auto;
     border-radius: 10px;
@@ -164,4 +164,13 @@ img {
     border-radius: 8px;
     display: block;
     margin: 20px 0;
+}
+
+#img_final{
+    width:50%;
+    height: auto;
+
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
 }
