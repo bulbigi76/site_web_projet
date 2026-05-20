@@ -1,0 +1,27 @@
+body {
+    background-color: #f4f5f6;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    }
+
+#chrono {
+    color: #e66a25; 
+    font-size: 250px;
+    margin-bottom: 20px;
+    }
+
+#res{
+    font-size: 50px;
+}
+
+button {
+    background-color: red;
+    padding: 200px 200px;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+    }
+
+button:hover {
+    background-color: rgb(78, 0, 0);
+    }

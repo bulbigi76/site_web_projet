@@ -76,6 +76,16 @@ body {
 
 }
 
+#jeu:hover{
+    color: #e66a25;
+
+}
+
+#jeu{
+    color: #2d3135;
+    text-decoration: underline;
+}
+
 
 #impression3d, #code, #montage, #cahier, #conclusion {
     background: #ffffff; 

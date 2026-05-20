@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="Stylesheet" href="top_chrono.css" type="text/css" />
+  <title>Top Chrono simulation</title>
+
+</head>
+<body>
+
+    <div id="res"></div>
+
+    <div id="chrono">00:000</div>
+
+  
+
+  <button id="btn" onclick="gererChrono()"></button>
+
+  <script>
+    let millisecondes = 0;
+    let interval = null;
+    let etape = 0;
+
+    function afficherTemps() {
+      let secondes = Math.floor(millisecondes / 1000);  //arrondi à l'inférieur 
+      let ms = millisecondes % 1000;
+
+      secondes = String(secondes).padStart(2, '0'); //permet d'avoir un  2e zéro affiché quand le temps défile 
+      ms = String(ms).padStart(3, '0');
+
+      document.getElementById("chrono").textContent =
+        `${secondes}:${ms}`;
+    }
+
+    function gererChrono() {
+      const bouton = document.getElementById("btn");
+
+      // 1er clic  START
+      if (etape === 0) {
+
+        interval = setInterval(() => {
+        millisecondes += 10;
+        afficherTemps();
+        }, 10);
+
+        etape = 1;
+      }
+
+      else if (etape === 1) {
+
+        clearInterval(interval); //arrête la boucle interval
+
+
+        if (millisecondes == 10000){
+
+        document.getElementById("res").textContent =
+        "VICTOIRE";
+        }else{
+        document.getElementById("res").textContent =
+        "DEFAITE";
+        }
+
+        etape = 2;
+      }
+
+      else {
+
+        document.getElementById("res").textContent =
+        "";
+
+        millisecondes = 0;
+        afficherTemps();
+        etape = 0;
+      }
+    }
+  </script>
+
+</body>
+</html>
