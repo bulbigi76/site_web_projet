@@ -2,7 +2,6 @@ body {
     background-color: #f4f5f6;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 100px;
     }
 
 #chrono {
@@ -23,5 +22,10 @@ button {
     }
 
 button:hover {
-    background-color: rgb(78, 0, 0);
+    background-color: rgb(204, 0, 0);
     }
+
+#retour{
+    text-align: left;
+    font-size: large;
+}
