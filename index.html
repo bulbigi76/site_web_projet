@@ -123,7 +123,6 @@ void setup() {
   ecran.init();
   ecran.backlight();
   pinMode(bouton, INPUT_PULLUP);
-  pinMode(8, OUTPUT);
 
   // Message initial
   ecran.setCursor(0, 0);
@@ -180,10 +179,8 @@ void loop() {
 
       if ((tempsEcoule / 10) == 1000) {
         ecran.print("VICTOIRE !");
-        tone(8, 1000, 500);
       } else {
         ecran.print("PERDU !");
-        tone(8, 200, 500);
       }
     }
 
